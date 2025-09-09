@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Authority–School Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Chat Room */
+    .chatroom-container {
+      max-width: 1000px;
+      margin: 130px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      height: 80vh;
+    }
+
+    /* Sidebar */
+    .chat-sidebar {
+      width: 280px;
+      background: #f1f1f1;
+      border-right: 1px solid #ddd;
+      border-radius: 10px 0 0 10px;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .chat-sidebar h3 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #004080;
+    }
+    .user {
+      background: #fff;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-size: 14px;
+    }
+
+    /* Main Chat Area */
+    .chat-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      background: #004080;
+      color: #fff;
+      padding: 15px;
+      font-size: 18px;
+      text-align: center;
+      border-radius: 0 10px 0 0;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .message {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 70%;
+      line-height: 1.4;
+    }
+    .school-msg {
+      background: #d1ecf1;
+      align-self: flex-end;
+    }
+    .authority-msg {
+      background: #f8f9fa;
+      align-self: flex-start;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+    .chat-footer button {
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency Access: Direct Communication Active
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="chatroom.html">Authority–School Chat</a>
+    </div>
+  </div>
+
+  <!-- Chat Room -->
+  <div class="chatroom-container">
+    <!-- Sidebar -->
+    <div class="chat-sidebar">
+      <h3>Authorities</h3>
+      <div class="user">🏛️ District Disaster Authority</div>
+      <div class="user">🏛️ Fire & Rescue Dept</div>
+      <div class="user">🏛️ Police Control Room</div>
+      
+      <h3>Schools</h3>
+      <div class="user">🏫 Green Valley High</div>
+      <div class="user">🏫 Sunrise Public School</div>
+      <div class="user">🏫 National Convent School</div>
+    </div>
+
+    <!-- Main Chat -->
+    <div class="chat-main">
+      <div class="chat-header">Authority–School Communication Channel</div>
+      <div class="chat-body" id="chat-body">
+        <div class="message school-msg">🏫 Green Valley High: Requesting update on upcoming safety drill schedule.</div>
+        <div class="message authority-msg">🏛️ District Authority: Drill scheduled on 15th Sept, 10 AM.</div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const chatBody = document.getElementById("chat-body");
+
+      if (input.value.trim() === "") return;
+
+      // Add school message
+      let schoolMsg = document.createElement("div");
+      schoolMsg.className = "message school-msg";
+      schoolMsg.textContent = "🏫 School: " + input.value;
+      chatBody.appendChild(schoolMsg);
+
+      // Dummy authority reply
+      let authorityMsg = document.createElement("div");
+      authorityMsg.className = "message authority-msg";
+      authorityMsg.textContent = "🏛️ Authority: We have received your message. (Auto-reply)";
+      chatBody.appendChild(authorityMsg);
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Offline Resources</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 1000px;
+      margin: 115px auto;
+      padding: 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+      color: #004080;
+      margin-bottom: 15px;
+    }
+
+    /* Map */
+    .map-placeholder {
+      width: 100%;
+      height: 400px;
+      background: #ddd url('https://via.placeholder.com/800x400?text=School+Location+Map') center/cover no-repeat;
+      border-radius: 10px;
+    }
+
+    /* Directory */
+    .contacts ul {
+      list-style: none;
+      padding: 0;
+    }
+    .contacts li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .contacts li span {
+      font-weight: bold;
+      color: #004080;
+    }
+
+    /* Guidelines */
+    .guidelines {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .guidelines img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency Access: <button onclick="openConfirm()">SOS Alert</button>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="open-chatbot.html">Chatbot</a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+
+    <!-- Map -->
+    <div class="section">
+      <h2>📍 School / College Evacuation Plan</h2>
+      <div class="map-placeholder"></div>
+      <p style="margin-top:10px;">*This image shows the Evacuation Map of schools/colleges with offline access.</p>
+    </div>
+
+    <!-- Emergency Contacts -->
+    <div class="section contacts">
+      <h2>📞 Emergency Contact Directory</h2>
+      <ul>
+        <li><span>Police:</span> 100</li>
+        <li><span>Fire Brigade:</span> 101</li>
+        <li><span>Ambulance:</span> 102</li>
+        <li><span>Disaster Helpline:</span> 108</li>
+        <li><span>School Admin:</span> +91-9876543210</li>
+      </ul>
+    </div>
+
+    <!-- Guidelines -->
+    <div class="section">
+      <h2>📝 Emergency Guidelines</h2>
+      <div class="guidelines">
+        <img src="https://via.placeholder.com/400x250?text=Earthquake+Guidelines" alt="Earthquake Guidelines">
+        <img src="https://via.placeholder.com/400x250?text=Flood+Guidelines" alt="Flood Guidelines">
+        <img src="https://via.placeholder.com/400x250?text=Fire+Guidelines" alt="Fire Guidelines">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOS Popups -->
+  <div class="modal" id="confirmModal">
+    <div class="modal-content">
+      <h2>⚠️ Confirm SOS Alert</h2>
+      <p>Are you sure you want to send the SOS alert to authorities?</p>
+      <button class="confirm-btn" onclick="sendSOS()">Yes, Send</button>
+      <button class="cancel-btn" onclick="closeModal('confirmModal')">Cancel</button>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <h2>✅ SOS Sent</h2>
+      <p>Your SOS alert has been sent successfully to authorities.</p>
+      <button class="success-btn" onclick="closeModal('successModal')">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function openConfirm() {
+      document.getElementById("confirmModal").style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    function sendSOS() {
+      closeModal("confirmModal");
+      setTimeout(() => {
+        document.getElementById("successModal").style.display = "flex";
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>

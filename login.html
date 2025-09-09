@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Role Based Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    .role-select {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .role-select label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .btn:hover {
+      background: #003060;
+    }
+
+    .google-btn {
+      background: #db4437;
+    }
+
+    .google-btn:hover {
+      background: #a33228;
+    }
+
+    .links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .links a {
+      text-decoration: none;
+      color: #004080;
+      margin: 0 10px;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <!-- Role Selection -->
+    <div class="role-select">
+      <label for="role">Login as:</label>
+      <select id="role">
+        <option value="">-- Select Role --</option>
+        <option value="govt">Govt. Authorities / Disaster Mgmt / NGOs</option>
+        <option value="school">Schools / Colleges</option>
+        <option value="teacher">Teachers</option>
+        <option value="student">Students</option>
+      </select>
+    </div>
+
+    <!-- Email/Password -->
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <button class="btn">Login</button>
+
+    <!-- Google Login -->
+    <button class="btn google-btn">Continue with Google</button>
+
+    <!-- Links -->
+    <div class="links">
+      <a href="register.html">Register</a> |
+      <a href="forgot-password.html">Forgot Password?</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Choose Role</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .role-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .role-container h2 {
+      margin-bottom: 25px;
+      color: #004080;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #003060;
+    }
+  </style>
+</head>
+<body>
+  <div class="role-container">
+      <header style="background:#004080; color:white; padding:15px; text-align:left;">
+          <button onclick="window.location.href='index.html'" 
+          style="background:white; color:#004080; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold;">
+          ← Back
+        </button>
+        <span style="margin-left:20px; font-size:18px; font-weight:bold;">SafeLearn Portal</span>
+    </header>
+    <br>
+    <br>
+    <h2>Register - Choose Your Role</h2>
+
+<!-- Role Selection -->
+    <form onsubmit="redirectToForm(event)">
+      <select id="role" required>
+        <option value="">-- Select Role --</option>
+        <option value="govt">Govt. Authorities / Disaster Mgmt / NGOs</option>
+        <option value="school">Schools / Colleges</option>
+        <option value="teacher">Teachers</option>
+        <option value="student">Students</option>
+      </select>
+
+      <button type="submit" class="btn">Continue</button>
+    </form>
+    <footer style="background:#f0f0f0; text-align:center; padding:12px; margin-top:30px; font-size:14px; color:#333; border-top:1px solid #ccc;">
+  © 2025 SafeLearn | Disaster Preparedness & Training
+</footer>
+  </div>
+
+  <script>
+    function redirectToForm(event) {
+      event.preventDefault(); // stop default form submit
+      const role = document.getElementById("role").value;
+
+      if (role === "govt") {
+        window.location.href = "register-govt.html";
+      } else if (role === "school") {
+        window.location.href = "register-school.html";
+      } else if (role === "teacher") {
+        window.location.href = "register-teacher.html";
+      } else if (role === "student") {
+        window.location.href = "register-student.html";
+      }
+    }
+  </script>
+</body>
+</html>

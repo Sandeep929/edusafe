@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Latest Alerts</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .alerts-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #004080;
+    }
+
+    /* Alert Cards */
+    .alert-card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-left: 6px solid;
+    }
+
+    .alert-card h3 {
+      margin-top: 0;
+    }
+
+    .alert-warning { border-color: orange; }
+    .alert-danger  { border-color: red; }
+    .alert-info    { border-color: blue; }
+
+    .date {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency Access: <button onclick="openConfirm()">SOS Alert</button>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="chatbot.html">Chatbot</a>
+    </div>
+  </div>
+
+  <!-- Alerts Section -->
+  <div class="container">
+    <h2 class="alerts-title">Latest Alerts & Warnings</h2>
+
+    <div class="alert-card alert-danger">
+      <h3>⚠️ Severe Thunderstorm Warning</h3>
+      <p class="date">09 Sept 2025, 09:15 AM</p>
+      <p>Heavy thunderstorms expected in the region. Schools advised to remain closed until further notice.</p>
+    </div>
+
+    <div class="alert-card alert-warning">
+      <h3>🌊 Flood Advisory</h3>
+      <p class="date">08 Sept 2025, 06:40 PM</p>
+      <p>Rising water levels reported near rivers. Evacuation routes prepared. Stay tuned for official updates.</p>
+    </div>
+
+    <div class="alert-card alert-info">
+      <h3>🦠 Health Safety Notice</h3>
+      <p class="date">07 Sept 2025, 01:30 PM</p>
+      <p>Seasonal flu cases rising in the district. Preventive measures recommended in all schools.</p>
+    </div>
+  </div>
+
+  <!-- SOS Popups (from earlier) -->
+  <div class="modal" id="confirmModal">
+    <div class="modal-content">
+      <h2>⚠️ Confirm SOS Alert</h2>
+      <p>Are you sure you want to send the SOS alert to authorities?</p>
+      <button class="confirm-btn" onclick="sendSOS()">Yes, Send</button>
+      <button class="cancel-btn" onclick="closeModal('confirmModal')">Cancel</button>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <h2>✅ SOS Sent</h2>
+      <p>Your SOS alert has been sent successfully to authorities.</p>
+      <button class="success-btn" onclick="closeModal('successModal')">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function openConfirm() {
+      document.getElementById("confirmModal").style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    function sendSOS() {
+      closeModal("confirmModal");
+      setTimeout(() => {
+        document.getElementById("successModal").style.display = "flex";
+      }, 300);
+    }
+  </script>
+</body>
+</html>

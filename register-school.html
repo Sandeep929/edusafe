@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Schools / Colleges</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: #003060;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #003060;
+    }
+
+    .equip-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Registration - Schools / Colleges / Universities</h2>
+
+    <header style="background:#004080; color:white; padding:15px; text-align:left;">
+  <button onclick="window.location.href='index.html'" 
+          style="background:white; color:#004080; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold;">
+    ← Back
+  </button>
+  <span style="margin-left:20px; font-size:18px; font-weight:bold;">SafeLearn Portal</span>
+</header>
+
+    <form action="dashboard-school.html" method="post" enctype="multipart/form-data">
+
+      <!-- 1. Institution Details -->
+      <h3>1. Institution Details</h3>
+      <label>Institution Name</label>
+      <input type="text" name="inst_name" required>
+
+      <label>Type</label>
+      <select name="inst_type" required>
+        <option value="">-- Select Type --</option>
+        <option value="school">School</option>
+        <option value="college">College</option>
+        <option value="university">University</option>
+      </select>
+
+      <label>Affiliation/Board/University Name</label>
+      <input type="text" name="affiliation">
+
+      <label>Registration/Institute ID</label>
+      <input type="text" name="inst_id">
+
+      <label>Year of Establishment</label>
+      <input type="number" name="est_year" min="1900" max="2025">
+
+      <!-- 2. Accurate Location Information -->
+      <h3>2. Accurate Location Information</h3>
+      <label>Address</label>
+      <textarea name="address" rows="3" required></textarea>
+
+      <label>Latitude</label>
+      <input type="text" name="latitude">
+
+      <label>Longitude</label>
+      <input type="text" name="longitude">
+
+      <label>Region/Geography (select multiple if applicable)</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="region[]" value="coastal"> Coastal Area</label>
+        <label><input type="checkbox" name="region[]" value="river"> River/Water Body Nearby</label>
+        <label><input type="checkbox" name="region[]" value="flood"> Flood-Prone Area</label>
+        <label><input type="checkbox" name="region[]" value="hilly"> Hilly Area</label>
+        <label><input type="checkbox" name="region[]" value="earthquake"> Earthquake-Prone Zone</label>
+        <label><input type="checkbox" name="region[]" value="cyclone"> Cyclone/Tornado-Prone Zone</label>
+        <label><input type="checkbox" name="region[]" value="urban"> Urban/Industrial Area</label>
+        <label><input type="checkbox" name="region[]" value="rural"> Rural/Plain Area</label>
+      </div>
+
+      <!-- 3. Infrastructure & Building Safety -->
+      <h3>3. Infrastructure & Building Safety</h3>
+      <label>Upload Building Plan</label>
+      <input type="file" name="building_plan" accept=".pdf,.jpg,.png">
+
+      <label>Number of Buildings & Floors</label>
+      <input type="text" name="buildings_floors">
+
+      <label>Construction Type</label>
+      <select name="construction_type">
+        <option value="">-- Select Type --</option>
+        <option value="rcc">RCC</option>
+        <option value="brick">Brick</option>
+        <option value="mixed">Mixed</option>
+        <option value="temporary">Temporary Structures</option>
+      </select>
+
+      <label>Fire Safety Certification</label>
+      <select name="fire_cert">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <input type="file" name="fire_cert_upload" accept=".pdf,.jpg,.png">
+
+      <!-- 4. Human Resources -->
+      <h3>4. Human Resources</h3>
+      <label>Number of Teachers</label>
+      <input type="number" name="teachers">
+
+      <label>Number of Non-Teaching Staff</label>
+      <input type="number" name="staff">
+
+      <label>Number of Students</label>
+      <input type="number" name="students">
+
+      <!-- 5. Emergency Equipment Availability -->
+      <h3>5. Emergency Equipment Availability</h3>
+      <div class="equip-row">
+        <label>Fire Hydrants</label>
+        <input type="number" name="hydrants_qty" placeholder="Qty">
+        <select name="hydrants_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Fire Extinguishers</label>
+        <input type="number" name="ext_qty">
+        <select name="ext_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Smoke Detectors</label>
+        <input type="number" name="smoke_qty">
+        <select name="smoke_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>First Aid Kits</label>
+        <input type="number" name="firstaid_qty">
+        <select name="firstaid_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Emergency Exit Signs</label>
+        <input type="number" name="exits_qty">
+        <select name="exits_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Alarm Systems</label>
+        <input type="number" name="alarm_qty">
+        <select name="alarm_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Life Boats</label>
+        <input type="number" name="lifeboats_qty">
+        <select name="lifeboats_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Life Jackets</label>
+        <input type="number" name="lifejackets_qty">
+        <select name="lifejackets_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Stretchers</label>
+        <input type="number" name="stretchers_qty">
+        <select name="stretchers_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <div class="equip-row">
+        <label>Rescue Tools</label>
+        <input type="number" name="rescue_qty">
+        <select name="rescue_cond">
+          <option>Good</option><option>Needs Maintenance</option>
+          <option>Non-Functional</option><option>Not Available</option>
+        </select>
+      </div>
+
+      <!-- 6. Emergency Preparedness -->
+      <h3>6. Emergency Preparedness</h3>
+      <label>Evacuation Plan Uploaded</label>
+      <select name="evac_plan">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <input type="file" name="evac_upload" accept=".pdf,.jpg,.png">
+
+      <label>Last Safety Drill Conducted</label>
+      <input type="date" name="drill_date">
+
+      <label>Nodal Safety Officer Name</label>
+      <input type="text" name="nodal_name">
+
+      <label>Nodal Safety Officer Contact</label>
+      <input type="tel" name="nodal_contact">
+
+      <label>Tie-ups with Local DM/Hospitals</label>
+      <select name="tieups">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <input type="file" name="mou_upload" accept=".pdf,.jpg,.png">
+
+      <!-- 7. Account Creation -->
+      <h3>7. Account Creation</h3>
+      <label>Username (Institute Code / Email)</label>
+      <input type="text" name="username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <label>Security Question/Recovery Email</label>
+      <input type="email" name="recovery_email">
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <footer style="background:#f0f0f0; text-align:center; padding:12px; margin-top:30px; font-size:14px; color:#333; border-top:1px solid #ccc;">
+  © 2025 SafeLearn | Disaster Preparedness & Training
+</footer>
+  </div>
+  
+</body>
+</html>

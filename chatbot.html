@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Chatbot Container */
+    .chat-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+
+    .chat-header {
+      background: #004080;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 20px;
+      max-width: 70%;
+      line-height: 1.4;
+    }
+    .user-msg {
+      background: #e0f7fa;
+      align-self: flex-end;
+    }
+    .bot-msg {
+      background: #f1f1f1;
+      align-self: flex-start;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+    .chat-footer button {
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency Access: Call Authorities | SOS Alerts Active
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="chatbot.html">Chatbot</a>
+    </div>
+  </div>
+
+  <!-- Chatbot Section -->
+  <div class="chat-container">
+    <div class="chat-header">EduSafe AI Chatbot 🤖</div>
+    <div class="chat-body" id="chat-body">
+      <div class="message bot-msg">Hello! I am your disaster safety assistant. How can I help you today?</div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const chatBody = document.getElementById("chat-body");
+
+      if (input.value.trim() === "") return;
+
+      // Add user message
+      let userMsg = document.createElement("div");
+      userMsg.className = "message user-msg";
+      userMsg.textContent = input.value;
+      chatBody.appendChild(userMsg);
+
+      // Bot reply (dummy for now)
+      let botMsg = document.createElement("div");
+      botMsg.className = "message bot-msg";
+      botMsg.textContent = "Thanks for your query! (AI reply coming soon...)";
+      chatBody.appendChild(botMsg);
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

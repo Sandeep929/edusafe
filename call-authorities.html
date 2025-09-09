@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Call Authorities</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Page Layout */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h1 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .authority-card {
+      background: #f8f9fa;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .authority-card h3 {
+      margin-top: 0;
+      color: #004080;
+    }
+    .authority-card p {
+      margin: 5px 0;
+    }
+
+    .btn-row {
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background: #004080;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background: #003060;
+    }
+
+    /* Emergency Message Form */
+    .form-box {
+      margin-top: 30px;
+      background: #eef5ff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .form-box h2 {
+      margin-top: 0;
+      color: #004080;
+    }
+    .form-box input, .form-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .form-box button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .form-box button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency: Contact Disaster Authorities Immediately
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="chatroom.html">Chat Room</a>
+      <a href="call-authorities.html">Call Authorities</a>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <div class="container">
+    <h1>📞 Contact Authorities</h1>
+
+    <!-- Authority Cards -->
+    <div class="authority-card">
+      <h3>🏛️ District Disaster Management Authority</h3>
+      <p>Phone: +91 98765 43210</p>
+      <p>Email: ddma@city.gov.in</p>
+      <div class="btn-row">
+        <a href="tel:+919876543210" class="btn">Call</a>
+        <a href="mailto:ddma@city.gov.in" class="btn">Email</a>
+      </div>
+    </div>
+
+    <div class="authority-card">
+      <h3>🚒 Fire & Rescue Department</h3>
+      <p>Phone: 101</p>
+      <p>Email: firedept@city.gov.in</p>
+      <div class="btn-row">
+        <a href="tel:101" class="btn">Call</a>
+        <a href="mailto:firedept@city.gov.in" class="btn">Email</a>
+      </div>
+    </div>
+
+    <div class="authority-card">
+      <h3>👮 Police Control Room</h3>
+      <p>Phone: 100</p>
+      <p>Email: policecontrol@city.gov.in</p>
+      <div class="btn-row">
+        <a href="tel:100" class="btn">Call</a>
+        <a href="mailto:policecontrol@city.gov.in" class="btn">Email</a>
+      </div>
+    </div>
+
+    <!-- Emergency Message Form -->
+    <div class="form-box">
+      <h2>Send Emergency Message 🚨</h2>
+      <form onsubmit="sendAlert(event)">
+        <input type="text" id="schoolName" placeholder="School Name" required>
+        <textarea id="emergencyMsg" rows="4" placeholder="Type your emergency message..." required></textarea>
+        <button type="submit">Send Alert</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function sendAlert(event) {
+      event.preventDefault();
+      const name = document.getElementById("schoolName").value;
+      const msg = document.getElementById("emergencyMsg").value;
+      alert("🚨 Emergency Alert Sent!\n\nFrom: " + name + "\nMessage: " + msg);
+    }
+  </script>
+</body>
+</html>

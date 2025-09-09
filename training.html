@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduSafe - Start Training</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Emergency Bar */
+    .emergency-bar {
+      background: red;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #004080;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Page Title */
+    .title {
+      text-align: center;
+      margin: 120px 0;
+      color: #004080;
+    }
+
+    /* Dropdown */
+    .region-select {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+    select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /* Training Modules Grid */
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      color: #004080;
+    }
+    .card p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .card button {
+      padding: 10px 15px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Modal for SOS (from your previous requirement) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 400px;
+      text-align: center;
+    }
+    .modal-content button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .confirm-btn { background: red; color: #fff; }
+    .cancel-btn { background: #ccc; }
+    .success-btn { background: green; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    🚨 Emergency Access: <button onclick="openConfirm()">SOS Alert</button>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><b>EduSafe</b></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="latest-alerts.html">Latest Alerts</a>
+      <a href="resources.html">Resources</a>
+      <a href="open-chatbot.html">Chatbot</a>
+      <a href="start-training.html">Training</a>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h2 class="title">Start Training</h2>
+
+  <!-- Region Dropdown -->
+  <div class="region-select">
+    <label for="region">Select Your Region: </label>
+    <select id="region" onchange="loadModules()">
+      <option value="">-- Choose Region --</option>
+      <option value="hilly">Hilly Region (Earthquake, Landslide)</option>
+      <option value="coastal">Coastal Region (Cyclone, Flood)</option>
+      <option value="plains">Plains (Flood, Fire)</option>
+      <option value="metro">Metro Cities (Fire Safety, Terror Preparedness)</option>
+    </select>
+  </div>
+
+  <!-- Training Modules -->
+  <div class="modules" id="modules">
+    <p style="text-align:center; color:#666;">Select a region to view training modules.</p>
+  </div>
+
+  <!-- SOS Modals -->
+  <div class="modal" id="confirmModal">
+    <div class="modal-content">
+      <h2>⚠️ Confirm SOS Alert</h2>
+      <p>Are you sure you want to send the SOS alert to authorities?</p>
+      <button class="confirm-btn" onclick="sendSOS()">Yes, Send</button>
+      <button class="cancel-btn" onclick="closeModal('confirmModal')">Cancel</button>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <h2>✅ SOS Sent</h2>
+      <p>Your SOS alert has been sent successfully to authorities.</p>
+      <button class="success-btn" onclick="closeModal('successModal')">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const trainingModules = {
+      hilly: [
+        {title: "Earthquake Preparedness", desc: "Learn evacuation drills and safety tips during earthquakes."},
+        {title: "Landslide Safety", desc: "Understand early warnings and safe evacuation routes."}
+      ],
+      coastal: [
+        {title: "Cyclone Safety", desc: "Prepare for cyclone alerts and community shelters."},
+        {title: "Flood Preparedness", desc: "Know flood-prone zones and safety measures."}
+      ],
+      plains: [
+        {title: "Flood Preparedness", desc: "Be aware of seasonal floods and survival kits."},
+        {title: "Fire Safety", desc: "Learn fire evacuation drills and extinguisher use."}
+      ],
+      metro: [
+        {title: "Fire Safety", desc: "Training on high-rise building fire evacuation."},
+        {title: "Terror Preparedness", desc: "Safety drills for handling urban emergencies."}
+      ]
+    };
+
+    function loadModules() {
+      const region = document.getElementById("region").value;
+      const container = document.getElementById("modules");
+      container.innerHTML = "";
+      
+      if (!region) {
+        container.innerHTML = "<p style='text-align:center; color:#666;'>Select a region to view training modules.</p>";
+        return;
+      }
+
+      trainingModules[region].forEach(module => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h3>${module.title}</h3>
+          <p>${module.desc}</p>
+          <button>Start Module</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // SOS Popups
+    function openConfirm() {
+      document.getElementById("confirmModal").style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    function sendSOS() {
+      closeModal("confirmModal");
+      setTimeout(() => {
+        document.getElementById("successModal").style.display = "flex";
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>

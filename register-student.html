@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .register-container h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #003060;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #003060;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Student Registration Form</h2>
+        <header style="background:#004080; color:white; padding:15px; text-align:left;">
+        <button onclick="window.location.href='index.html'"
+            style="background:white; color:#004080; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold;">
+            ← Back
+        </button>
+        <span style="margin-left:20px; font-size:18px; font-weight:bold;">SafeLearn Portal</span>
+    </header>
+
+        <form action="dashboard-student.html" method="post">
+            <!-- 1. Basic Information -->
+            <h3>1. Basic Information</h3>
+            <label>Full Name</label>
+            <input type="text" name="full_name" required>
+
+            <label>Gender</label>
+            <select name="gender" required>
+                <option value="">-- Select Gender --</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <label>Date of Birth</label>
+            <input type="date" name="dob" required>
+
+            <label>Contact Number (optional)</label>
+            <input type="tel" name="contact">
+
+            <label>Email ID (if available)</label>
+            <input type="email" name="email">
+
+            <label>Class / Grade</label>
+            <input type="text" name="class" required>
+
+            <label>Roll Number / Student ID</label>
+            <input type="text" name="student_id" required>
+
+            <label>School/College Name</label>
+            <input type="text" name="institute_name" placeholder="Enter or select from list" required>
+
+            <!-- 2. Parental / Guardian Information -->
+            <h3>2. Parental / Guardian Information</h3>
+            <label>Parent / Guardian Name</label>
+            <input type="text" name="guardian_name" required>
+
+            <label>Relationship</label>
+            <select name="relationship" required>
+                <option value="">-- Select Relationship --</option>
+                <option>Father</option>
+                <option>Mother</option>
+                <option>Other</option>
+            </select>
+
+            <label>Guardian Contact Number</label>
+            <input type="tel" name="guardian_contact" required>
+
+            <label>Guardian Email (if available)</label>
+            <input type="email" name="guardian_email">
+
+            <label>Guardian Address (if different)</label>
+            <textarea name="guardian_address" rows="2"></textarea>
+
+            <!-- 3. Origin / Regional Information -->
+            <h3>3. Origin / Regional Information</h3>
+            <label>Place of Birth / Origin</label>
+            <input type="text" name="origin_place" required>
+
+            <label>District</label>
+            <input type="text" name="district" required>
+
+            <label>State</label>
+            <input type="text" name="state" required>
+
+            <!-- 4. Health & Physical Status -->
+            <h3>4. Health & Physical Status</h3>
+            <label>Medical Condition</label>
+            <select name="medical_condition">
+                <option>None</option>
+                <option>Chronic Illness</option>
+                <option>Allergies</option>
+                <option>Others</option>
+            </select>
+
+            <label>Physically Challenged?</label>
+            <select name="physically_challenged" required>
+                <option value="">-- Select --</option>
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+            <input type="text" name="challenge_type" placeholder="Specify if Yes">
+
+            <!-- 5. Emergency & Safety Info -->
+            <h3>5. Emergency & Safety Info</h3>
+            <label>Blood Group</label>
+            <input type="text" name="blood_group" required>
+
+            <label>Any allergies (Food / Medicine / Others)</label>
+            <input type="text" name="allergies">
+
+            <label>Prior injuries or conditions (if any)</label>
+            <textarea name="injuries" rows="2"></textarea>
+
+            <!-- 6. Account Creation -->
+            <h3>6. Account Creation</h3>
+            <label>Username (Student ID / Email)</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <footer
+            style="background:#f0f0f0; text-align:center; padding:12px; margin-top:30px; font-size:14px; color:#333; border-top:1px solid #ccc;">
+            © 2025 SafeLearn | Disaster Preparedness & Training
+        </footer>
+    </div>
+</body>
+
+</html>

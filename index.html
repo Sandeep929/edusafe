@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSafe - Digital Disaster Learning for Safer Schools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Emergency Bar -->
+    <div class="emergency-bar">
+        <div class="container">
+            <div class="emergency-buttons">
+                <span>🚨 Emergency Access:</span>
+                <button class="emergency-btn" onclick="location.href='sos-popup.html'">SOS ALERT</button>
+                <button class="emergency-btn" onclick="location.href='latest-alerts.html'">Latest Alerts</button>
+                <button class="emergency-btn" onclick="location.href='offline-resources.html'">Offline Resources</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">EduSafe</div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#drills">Virtual Drills</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">Login</button>
+                    <button class="btn btn-primary" onclick="location.href='register.html'">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fadeInUp">
+                <div class="hero-text">
+                    <h1>Digital Disaster Learning for Safer Schools</h1>
+                    <p class="hero-tagline">Empowering students, teachers, and institutions with AI-powered disaster
+                        preparedness training, virtual drills, and real-time emergency response systems.</p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-hero" onclick="location.href='training.html'">Start Training Now</button>
+                        <button class="btn btn-outline btn-hero" onclick="location.href='login.html'">Login to Dashboard</button>
+                    </div>
+
+                    <div class="quick-access">
+                        <button class="quick-btn" onclick="location.href='sos-popup.html'">🚨 Emergency SOS</button>
+                        <button class="quick-btn" onclick="location.href='latest-alerts.html'">📢 Latest Alerts</button>
+                        <button class="quick-btn" onclick="location.href='offline-resources.html'">📱 Offline Resources</button>
+                        <button class="quick-btn" onclick="location.href='chatbot.html'">🤖 AI Assistant</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Interactive visual representation will go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Disaster Preparedness Platform</h2>
+                <p class="section-subtitle">Advanced technology meets practical safety training to create the most
+                    effective disaster preparedness system for educational institutions.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI-Powered Emergency Assistant</h3>
+                    <p class="feature-desc">24/7 intelligent chatbot providing real-time survival guidance through voice
+                        and text. Trained on disaster response protocols and local emergency procedures.</p>
+                </div>
+
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">🥽</div>
+                    <h3 class="feature-title">AR/VR Virtual Drills</h3>
+                    <p class="feature-desc">Immersive 3D simulations of disaster scenarios including earthquake shaking
+                        rooms, fire escape training, and flood evacuation procedures.</p>
+                </div>
+
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">📍</div>
+                    <h3 class="feature-title">RFID Attendance Tracking</h3>
+                    <p class="feature-desc">Real-time monitoring of drill participation with smart tracking. Know
+                        exactly who participated, who missed, and evacuation route effectiveness.</p>
+                </div>
+
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">📡</div>
+                    <h3 class="feature-title">LoRaWAN Emergency Network</h3>
+                    <p class="feature-desc">IoT-enabled emergency communication system that works even when regular
+                        networks fail. Instant SOS alerts to authorities and emergency contacts.</p>
+                </div>
+
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Advanced Analytics Dashboard</h3>
+                    <p class="feature-desc">Comprehensive preparedness analytics with readiness scores, drill
+                        performance metrics, and institutional safety heatmaps.</p>
+                </div>
+
+                <div class="feature-card fadeInUp">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Offline-First Design</h3>
+                    <p class="feature-desc">Critical safety information, emergency contacts, and evacuation maps
+                        available offline. Works when you need it most - during actual emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Roles Section -->
+    <section class="user-roles">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Role-Based Access for Every User</h2>
+                <p class="section-subtitle">Customized experiences designed for students, educators, and administrators
+                    with specific tools for each role.</p>
+            </div>
+
+            <div class="roles-grid">
+                <div class="role-card fadeInUp">
+                    <div class="role-icon">🎓</div>
+                    <h3 class="role-title">Students</h3>
+                    <ul class="role-features">
+                        <li>Interactive disaster learning modules</li>
+                        <li>Gamified quizzes and survival tests</li>
+                        <li>Virtual drill participation tracking</li>
+                        <li>Personal progress reports and badges</li>
+                        <li>AI chatbot for emergency guidance</li>
+                        <li>Peer-to-peer safety discussions</li>
+                    </ul>
+                </div>
+
+                <div class="role-card fadeInUp">
+                    <div class="role-icon">👨‍🏫</div>
+                    <h3 class="role-title">Teachers & Staff</h3>
+                    <ul class="role-features">
+                        <li>Assign and monitor virtual drills</li>
+                        <li>Track student participation and readiness</li>
+                        <li>Access class-wise analytics reports</li>
+                        <li>Create and share training content</li>
+                        <li>Emergency communication tools</li>
+                        <li>Student guidance and mentoring</li>
+                    </ul>
+                </div>
+
+                <div class="role-card fadeInUp">
+                    <div class="role-icon">⚙️</div>
+                    <h3 class="role-title">Admins & Authorities</h3>
+                    <ul class="role-features">
+                        <li>Institution-wide emergency alerts</li>
+                        <li>Comprehensive analytics dashboard</li>
+                        <li>IoT device management and monitoring</li>
+                        <li>Content management and updates</li>
+                        <li>Drill scheduling and evaluation</li>
+                        <li>Integration with local emergency services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="training">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Disaster Training</h2>
+                <p class="section-subtitle">Step-by-step guides, videos, and quizzes to prepare for different disaster
+                    scenarios.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Earthquake Safety</h3>
+                    <p class="feature-desc">Learn drop, cover, and hold techniques with AR simulations.</p>
+                    <button class="btn btn-primary" onclick="location.href='start-module.html'">Start Module</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌊</div>
+                    <h3 class="feature-title">Flood Safety</h3>
+                    <p class="feature-desc">Surviving plans, disease prevention.</p>
+                    <button class="btn btn-primary" onclick="location.href='start-module.html'">Start Module</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3 class="feature-title">Fire Evacuation</h3>
+                    <p class="feature-desc">Fire drill training, smoke navigation tips, and exit planning.</p>
+                    <button class="btn btn-primary" onclick="location.href='start-module.html'">Start Module</button>
+                </div>
+                <!-- Add more modules -->
+            </div>
+        </div>
+    </section>
+
+    <section class="user-roles" id="drills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Virtual Disaster Drills</h2>
+                <p class="section-subtitle">Experience AR/VR powered drills with real-time participation tracking.</p>
+            </div>
+            <div class="role-card">
+                <h3 class="role-title">School Evacuation Plan</h3>
+                <div class="hero-visual" style="height:300px;">
+                    🏫 Floorplan Placeholder
+                </div>
+                <button class="btn btn-primary" style="margin-top:20px;">Generate AI Evacuation Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="analytics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Preparedness Analytics</h2>
+                <p class="section-subtitle">Track performance, readiness, and participation across roles.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Readiness Score</h3>
+                    <p class="feature-desc">Your disaster preparedness score is <strong>78%</strong>. Keep training to
+                        improve!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Drill Participation</h3>
+                    <p class="feature-desc">80% of students attended the last drill. 20% need follow-up.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3 class="feature-title">Safety Heatmap</h3>
+                    <p class="feature-desc">Visual map showing safe/unsafe zones during drills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-roles" id="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Emergency Resources</h2>
+                <p class="section-subtitle">Access guides, maps, and contacts even without the internet.</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon">📑</div>
+                    <h3 class="role-title">Downloadable Guides</h3>
+                    <ul class="role-features">
+                        <li><a href="#">Earthquake Survival PDF</a></li>
+                        <li><a href="#">Fire Safety Handbook</a></li>
+                        <li><a href="#">Flood Preparedness Guide</a></li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">📱</div>
+                    <h3 class="role-title">Emergency Contacts</h3>
+                    <ul class="role-features">
+                        <li><a href="tel:100">Police - 100</a></li>
+                        <li><a href="tel:101">Fire - 101</a></li>
+                        <li><a href="tel:108">Ambulance - 108</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features" id="chat">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Communication Hub</h2>
+                <p class="section-subtitle">Stay connected with peers, teachers, and authorities in real time.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Chatbot</h3>
+                    <p class="feature-desc">Ask safety questions and get instant guidance.</p>
+                    <button class="btn btn-primary" onclick="location.href='chatbot.html'">Open Chatbot</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Peer Chat</h3>
+                    <p class="feature-desc">Emergency communication with Authorities.</p>
+                    <button class="btn btn-outline" onclick="location.href='chatroom.html'">Join Chat Room</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3 class="feature-title">Call Authorities</h3>
+                    <p class="feature-desc">Connect with local disaster management centers.</p>
+                    <button class="btn btn-primary" onclick="location.href='call-authorities.html'">Start Call</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Make Your Institution Safer?</h2>
+                <p>Join thousands of schools and colleges already using EduSafe to prepare for emergencies and save
+                    lives.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-hero" onclick="location.href='login.html'">Login</button>
+                    <button class="btn btn-outline btn-hero" style="color: white; border-color: white;"
+                        onclick="location.href='register.html'">Register</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="#">Training Modules</a></li>
+                        <li><a href="#">Virtual Drills</a></li>
+                        <li><a href="#">AI Assistant</a></li>
+                        <li><a href="#">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Emergency Guides</a></li>
+                        <li><a href="#">Safety Protocols</a></li>
+                        <li><a href="#">Training Materials</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduSafe. All rights reserved. Making schools safer through technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        🌙
+    </div>
+
+    <!-- Modals -->
+    <div id="sosModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sosModal')">&times;</span>
+            <h2 style="color: #dc2626; margin-bottom: 20px;">🚨 Emergency SOS</h2>
+            <p style="margin-bottom: 20px;">This will send an immediate alert to emergency contacts and authorities.</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button class="btn" style="background: #dc2626; color: white;">Send SOS Alert</button>
+                <button class="btn btn-outline" onclick="closeModal('sosModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Login to EduSafe</h2>
+            <form style="display: flex; flex-direction: column; gap: 20px;">
+                <select style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;">
+                    <option>Select Your Role</option>
+                    <option>Student</option>
+                    <option>Teacher/Staff</option>
+                    <option>Admin/Authority</option>
+                </select>
+                <input type="email" placeholder="Email Address"
+                    style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;">
+                <input type="password" placeholder="Password"
+                    style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;">
+                <button type="submit" class="btn btn-primary">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Get Started with EduSafe</h2>
+            <form style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" placeholder="Institution Name"
+                    style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;">
+                <input type="text" placeholder="Your Name"
+                    style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px;">
+                <input type="email" placeholder="Email
+            </form>
+        </div>
+    </div>

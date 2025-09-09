@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Authorities / NGOs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: #003060;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #004080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #003060;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Registration - Authorities / NGOs / Disaster Management</h2>
+
+    <header style="background:#004080; color:white; padding:15px; text-align:left;">
+  <button onclick="window.location.href='index.html'" 
+          style="background:white; color:#004080; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold;">
+    ← Back
+  </button>
+  <span style="margin-left:20px; font-size:18px; font-weight:bold;">SafeLearn Portal</span>
+</header>
+
+    <form action="dashboard-govt.html" method="post">
+      <!-- 1. Basic Organization Details -->
+      <h3>1. Basic Organization Details</h3>
+      <label>Organization/Authority/NGO Name</label>
+      <input type="text" name="org_name" required>
+
+      <label>Type of Authority</label>
+      <select name="org_type" required>
+        <option value="">-- Select Type --</option>
+        <option value="govt">Government</option>
+        <option value="disaster">Disaster Management Cell</option>
+        <option value="ngo">NGO</option>
+      </select>
+
+      <label>Registration/License Number</label>
+      <input type="text" name="reg_number" required>
+
+      <label>Year of Establishment</label>
+      <input type="number" name="est_year" min="1900" max="2025">
+
+      <!-- 2. Contact Information -->
+      <h3>2. Contact Information</h3>
+      <label>Official Email ID</label>
+      <input type="email" name="official_email" required>
+
+      <label>Official Phone Number / Helpline</label>
+      <input type="tel" name="official_phone" required>
+
+      <label>Office Address</label>
+      <textarea name="office_address" rows="3" required></textarea>
+
+      <label>Website (if any)</label>
+      <input type="url" name="website">
+
+      <!-- 3. Authorized Representative Details -->
+      <h3>3. Authorized Representative Details</h3>
+      <label>Full Name</label>
+      <input type="text" name="rep_name" required>
+
+      <label>Designation/Role</label>
+      <input type="text" name="rep_designation" required>
+
+      <label>ID Proof (Govt./Org ID, Aadhaar, etc.)</label>
+      <input type="text" name="rep_id_proof" required>
+
+      <label>Contact Number</label>
+      <input type="tel" name="rep_contact" required>
+
+      <label>Email Address</label>
+      <input type="email" name="rep_email" required>
+
+      <!-- 4. Operational Details -->
+      <h3>4. Operational Details</h3>
+      <label>Area of Operation</label>
+      <select name="operation_area" required>
+        <option value="">-- Select Area --</option>
+        <option value="district">District</option>
+        <option value="state">State</option>
+        <option value="national">National</option>
+        <option value="international">International</option>
+      </select>
+
+      <label>Type of Services Provided</label>
+      <textarea name="services" rows="3" placeholder="Rescue, Relief, Training, Awareness..." required></textarea>
+
+      <label>Number of Active Volunteers/Staff</label>
+      <input type="number" name="volunteers" min="0">
+
+      <!-- Account Creation -->
+      <h3>5. Account Creation</h3>
+      <label>Username (Email)</label>
+      <input type="text" name="username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <footer style="background:#f0f0f0; text-align:center; padding:12px; margin-top:30px; font-size:14px; color:#333; border-top:1px solid #ccc;">
+  © 2025 SafeLearn | Disaster Preparedness & Training
+</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #004080;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+    .profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 10px;
+    }
+    .profile h3 {
+      margin: 5px 0;
+    }
+    .profile p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .nav {
+      margin-top: 30px;
+    }
+    .nav button {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 15px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .nav button:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .logout {
+      margin-top: 30px;
+    }
+    .logout button {
+      width: 100%;
+      padding: 12px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    header button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    header h2 {
+      margin-left: 15px;
+      color: #004080;
+    }
+
+    .dashboard {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #004080;
+    }
+    .card button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div>
+      <div class="profile">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrryobdSzpWzGRH2FtdLIPwH9TlnovfmYACw&s" alt="Teacher">
+        <h3>Mr. Sharma</h3>
+        <p>Science Teacher</p>
+      </div>
+      <div class="nav">
+        <button>📘 Assign Training</button>
+        <button>🎯 My Training</button>
+        <button>📊 Drill Tracker</button>
+        <button>📷 Upload Drill Photos</button>
+        <button>📝 Update Drill Records</button>
+        <button>👥 Attendance</button>
+        <button>🚨 Emergency Actions</button>
+        <button>💬 Communication</button>
+      </div>
+    </div>
+    <div class="logout">
+      <button>Logout</button>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <div class="main">
+    <!-- Top Header -->
+    <header>
+      <h2>Teacher Dashboard</h2>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard">
+      <div class="card">
+        <h3>Assign Training</h3>
+        <p>Assign region-specific training modules to students.</p>
+        <button>Assign Module</button>
+      </div>
+
+      <div class="card">
+        <h3>My Training</h3>
+        <p>Access and complete your own training modules.</p>
+        <button>Start Training</button>
+      </div>
+
+      <div class="card">
+        <h3>Drill Tracker</h3>
+        <p>Track ongoing drills and upload drill reports.</p>
+        <button>Track Drills</button>
+      </div>
+
+      <div class="card">
+        <h3>Upload Drill Photos</h3>
+        <p>Upload pictures with embedded location of drill participants.</p>
+        <button>Upload</button>
+      </div>
+
+      <div class="card">
+        <h3>Update Drill Records</h3>
+        <p>Mark drills as conducted or pending.</p>
+        <button>Update Records</button>
+      </div>
+
+      <div class="card">
+        <h3>Attendance Dashboard</h3>
+        <p>View present students, teachers, and staff.</p>
+        <button>View Attendance</button>
+      </div>
+
+      <div class="card">
+        <h3>Emergency Actions</h3>
+        <p>Initiate SOS, send manual requests, or contact authorities.</p>
+        <button>SOS / Request</button>
+      </div>
+
+      <div class="card">
+        <h3>Communication</h3>
+        <p>Access peer chat or communicate with authorities.</p>
+        <button>Open Chat</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
